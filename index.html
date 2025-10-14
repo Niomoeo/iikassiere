@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Iikassiere bitte!</title>
+
+    <style>
+        :root {
+            --top-height: 45%
+        }
+
+        html,
+        body,
+        .site {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            touch-action: manipulation;
+            user-select: none;
+            /* Standard */
+            -webkit-user-select: none;
+            /* Safari */
+            -moz-user-select: none;
+            /* Firefox */
+            -ms-user-select: none;
+            /* Internet Explorer/Edge */
+        }
+
+        .top {
+            width: 100%;
+            height: var(--top-height);
+            border-bottom: 5px solid gray;
+            overflow-y: auto;
+
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100'><circle cx='10' cy='15' r='4' fill='blueviolet'/><circle cx='40' cy='25' r='3' fill='blueviolet'/><circle cx='70' cy='70' r='5' fill='blueviolet'/><circle cx='85' cy='40' r='2' fill='blueviolet'/><circle cx='25' cy='60' r='3' fill='blueviolet'/><circle cx='55' cy='10' r='2.5' fill='blueviolet'/></svg>");
+            background-size: 100px 100px;
+        }
+
+        .top ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            list-style: none;
+            padding: 10px;
+            margin: 0;
+        }
+
+        .top ul li {
+            background-color: rgb(205, 151, 255);
+            border: 2px solid gray;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            aspect-ratio: 1 / 1;
+            font-size: 1.2em;
+        }
+
+        .top li button {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            padding: 12px;
+            color: black;
+        }
+
+        .button-top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .name-button {
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        .description-button {
+            font-size: 1.3em;
+            color: #333;
+            margin-top: 2px;
+        }
+
+        .prize-button {
+            font-size: 1.3em;
+            font-weight: 900;
+            color: rgb(86, 86, 86);
+        }
+
+        /* --- bottom section --- */
+
+        .bottom {
+            width: 100%;
+            height: calc(100% - var(--top-height) - 5px - 85px);
+
+            display: flex;
+            justify-content: center;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        .bottom-content {
+            width: 85%;
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            overflow-y: scroll;
+            box-sizing: border-box;
+        }
+
+        .bottom-row {
+            width: 100%;
+            font-size: 1.7em;
+            padding: 10px 0;
+            border-bottom: 3px gray dotted;
+            display: flex;
+            flex-direction: row;
+        }
+
+        .bottom-row .left {
+            width: calc(100% - 155px);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            overflow-x: hidden;
+        }
+
+        .bottom-row .right {
+            width: 155px;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            gap: 15px;
+        }
+
+        .bottom-row button {
+            background: #fff;
+            color: blueviolet;
+            font-weight: bold;
+            border: 2px solid blueviolet;
+            border-radius: 8px;
+            padding: 5px 12px;
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: background-color 0.15s ease;
+        }
+
+        .bottom-row button:active {
+            background: #ccc;
+        }
+
+        .finish-button {
+            width: 85%;
+            height: 70px;
+            margin: 15px auto 0 auto;
+            font-size: 1.7em;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            display: block;
+            position: sticky;
+            bottom: 10px;
+        }
+
+        .back-button,
+        .new-button {
+            width: 85%;
+            margin: 20px auto;
+            font-size: 2em;
+            background-color: blueviolet;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .finish-button:active,
+        .back-button:active,
+        .new-button:active {
+            background-color: rgb(110, 45, 180);
+        }
+
+        /* --- Site 2 --- */
+        .site2-content {
+            width: 85%;
+            margin: 0 auto;
+            padding-top: 15px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-sizing: border-box;
+        }
+
+        .invoice-list {
+            flex-grow: 1;
+            overflow-y: auto;
+            font-size: 2em;
+            border-top: 3px dotted gray;
+            border-bottom: 3px dotted gray;
+            padding: 10px 0;
+        }
+
+        .invoice-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+
+        .sum-line {
+            font-size: 2.2em;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- === SITE 1 === -->
+    <div id="site1" class="site">
+        <div class="top">
+            <ul>
+                <li>
+                    <button>
+                        <div class="button-top">
+                            <span class="name-button">Mineral</span>
+                            <span class="description-button">Erfrischendes Wasser</span>
+                        </div>
+                        <span class="prize-button">9 CHF</span>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bottom">
+            <div class="bottom-content">
+
+                <div class="bottom-row">
+                    <div class="left">
+                        <span class="count">1x</span>
+                        <span class="item-name">Menuöajfölkjafölkjdsfköjdfja</span>
+                    </div>
+                    <div class="right">
+                        <span class="prize">28 CHF</span>
+                        <button>-</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <button class="finish-button" onclick="showSite2()">Rechnung abschliessen</button>
+    </div>
+
+    <!-- === SITE 2 === -->
+    <div id="site2" class="site" hidden>
+        <div class="site2-content">
+            <button class="back-button" onclick="showSite1()">← Zurück</button>
+
+            <div class="invoice-list">
+                <div class="invoice-item"><span>1x Menu</span><span>5 CHF</span></div>
+            </div>
+
+            <div class="sum-line">
+                <span>Summe:</span>
+                <span>18 CHF</span>
+            </div>
+
+            <button class="new-button">Neue Rechnung</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

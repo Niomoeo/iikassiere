@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Menu",
+        "description": "",
+        "price": 28
+    },
+
+    {
+        "name": "Mineral",
+        "description": "3dl",
+        "price": 4
+    },
+        
+    {
+        "name": "Mineral",
+        "description": "10dl",
+        "price": 9
+    },
+        
+    {
+        "name": "Bier",
+        "description": "",
+        "price": 5
+    },
+        
+    {
+        "name": "Cüpli",
+        "description": "",
+        "price": 4
+    },
+        
+    {
+        "name": "Kaffee",
+        "description": "",
+        "price": 3
+    },
+        
+    {
+        "name": "Schnaps",
+        "description": "",
+        "price": 5
+    }
+    
+]
