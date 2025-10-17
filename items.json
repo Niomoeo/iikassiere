@@ -24,6 +24,30 @@
     },
         
     {
+        "name": "Johannisberg",
+        "description": "",
+        "price": 15
+    },
+
+    {
+        "name": "Nez Noir",
+        "description": "",
+        "price": 30
+    },
+
+    {
+        "name": "Tisin Rosso",
+        "description": "",
+        "price": 15
+    },
+
+    {
+        "name": "Wein",
+        "description": "Glas",
+        "price": 5
+    },
+
+    {
         "name": "Cüpli",
         "description": "",
         "price": 4
